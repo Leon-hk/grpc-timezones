@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+service TimeZones {
+  rpc getTime(TimeZone) returns (Time) {}
+
+  rpc getTimezones(Empty) returns (stream TimeZone) {}
+}
+
+message TimeZone {
+  required string name = 1;
+  required double offset = 2;
+}
+
+message Time {
+  required string time = 1;
+}
+
+message Empty {
+
+}
