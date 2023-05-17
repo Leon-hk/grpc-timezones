@@ -2,9 +2,8 @@ import datetime
 
 import grpc
 from protos import timezones_pb2_grpc, timezones_pb2
-import pytz
-print(datetime.datetime.now(pytz.timezone("America/Lima")).timestamp())
-print(datetime.datetime.now().timestamp())
+
+
 # Instantiate stub class with local server
 channel = grpc.insecure_channel('localhost:50051')
 stub = timezones_pb2_grpc.TimeZonesStub(channel)
